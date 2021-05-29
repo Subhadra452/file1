@@ -1,0 +1,33 @@
+maching braces program in python
+
+s=input()
+l=[]
+c=0
+for i in s:
+    if(i=='{' or i=='[' or i=='('):
+        l.append(i)
+    elif(i=='}' and len(l)!=0):
+        if(l[-1]=='{'):
+            l.pop()
+        else:
+            c=1
+            break
+    elif(i==']' and len(l)!=0):
+        if(l[-1]=='['):
+            l.pop()
+        else:
+            c=1
+            break
+    elif(i==')' and len(l)!=0):
+        if(l[-1]=='('):
+            l.pop()
+        else:
+            c=1
+            break
+    else:
+        c=1
+        break
+if(len(l)==0 and c==0):
+    print("matching")
+else:
+    print("not matching")
